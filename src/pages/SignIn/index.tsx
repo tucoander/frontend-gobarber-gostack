@@ -8,7 +8,7 @@ import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, Background, AnimationContainer } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -61,23 +61,25 @@ const SignIn: React.FC = () => {
     <>
       <Container>
         <Content>
-          <img src={logoImg} alt="GoBarber" />
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu logon</h1>
-            <Input name="email" icon={FiMail} placeholder="E-mail" />
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="Senha"
-            />
-            <Button type="submit">Entrar</Button>
-            <a href="forgot">Esqueci minha senha</a>
-          </Form>
-          <Link to="/signup">
-            <FiLogIn />
-            Criar conta
-          </Link>
+          <AnimationContainer>
+            <img src={logoImg} alt="GoBarber" />
+            <Form ref={formRef} onSubmit={handleSubmit}>
+              <h1>Faça seu logon</h1>
+              <Input name="email" icon={FiMail} placeholder="E-mail" />
+              <Input
+                name="password"
+                icon={FiLock}
+                type="password"
+                placeholder="Senha"
+              />
+              <Button type="submit">Entrar</Button>
+              <a href="forgot">Esqueci minha senha</a>
+            </Form>
+            <Link to="/signup">
+              <FiLogIn />
+              Criar conta
+            </Link>
+          </AnimationContainer>
         </Content>
         <Background>
           <img src="" alt="" />
