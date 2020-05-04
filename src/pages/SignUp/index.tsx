@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
+import { Link } from 'react-router-dom';
 import { Container, Content, Background } from './styles';
 import logoImg from '../../assets/logo.svg';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -27,7 +28,7 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       const errors = getValidationErrors(err);
       formRef.current?.setErrors(errors);
     }
@@ -52,10 +53,10 @@ const SignUp: React.FC = () => {
             />
             <Button type="submit">Cadastrar</Button>
           </Form>
-          <a href="forgot">
+          <Link to="/">
             <FiArrowLeft />
             Voltar para logon
-          </a>
+          </Link>
         </Content>
       </Container>
     </>
